@@ -32,8 +32,7 @@ describe("Math Functions", () => {
         assert.isFunction(subtract, "numbers as params");
       });
       it("should return a number", () => {
-        let answer = subtract(5, 2);
-        
+        assert.isNumber( subtract(5,4) )
       })
       it("should properly subtract two numbers", () => {
         assert.equal(subtract(3, 2), 1);
@@ -47,6 +46,9 @@ describe("Math Functions", () => {
   describe("divide", () => {
     it("should be a function", () => {
       assert.isFunction(divide, "numbers as params");
+    });
+    it("should return a number", () => {
+      assert.isNumber(6, 2);
     });
     it("should return Infinity if we divide by 0", () => {
       assert.equal(divide(5, 0), Infinity);
@@ -62,10 +64,13 @@ describe("Math Functions", () => {
       assert.isFunction(multiply, "numbers as params");
     });
     it("should return a number", () => {
+      assert.isNumber( multiply(6,5));
+    });
+    it("should properly multiply numbers", () => {
       assert.equal(multiply(5, 2), 10);
       assert.equal(multiply(25, 25), 625);
       assert.equal(multiply(-242, -2), 484)
-    })
+    });
   });
 
   describe("areSameLength", () => {
@@ -116,7 +121,7 @@ describe("Math Functions", () => {
       assert.isFalse(isEven(5));
       assert.isFalse(isEven(-31));
       assert.isFalse(isEven(5/2));
-    })
+    });
   });
 
   describe("isOdd", () => {
@@ -128,7 +133,7 @@ describe("Math Functions", () => {
     });
     it("should return true if the number is odd", () => {
       assert.isTrue(isOdd(1231))
-    })
+    });
     it("should return false if the number is even", () => {
       assert.isFalse(isOdd(50));
       assert.isFalse(isOdd(222225550));
@@ -138,6 +143,9 @@ describe("Math Functions", () => {
   describe("roundNumber", () => {
     it("should be a function", () => {
       assert.isFunction(roundNumber, "number as param");
+    });
+    it("should return a number", () => {
+      assert.isNumber(roundNumber(1.5))
     });
     it("should round up when needed", () => {
       assert.equal(roundNumber(1.5), 2);
